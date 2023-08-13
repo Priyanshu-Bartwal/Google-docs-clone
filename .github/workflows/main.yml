@@ -53,8 +53,8 @@ jobs:
 
       - name: Build and tag Docker images
         run: |
-          docker compose -f D:\Projects\Google docs clone\docker-compose.yaml build
+          docker compose -f ./docker-compose.yaml build
 
       - name: Push Docker images to Amazon ECR
         run: |
-          docker compose -f D:\Projects\Google docs clone\docker-compose.yaml push
+          docker compose -f ./docker-compose.yaml push

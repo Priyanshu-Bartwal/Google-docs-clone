@@ -53,7 +53,7 @@ jobs:
 
       - name: Build and tag Docker images
         run: |
-          docker compose -f ./docker-compose.yaml -e MONGODB_URI=${{secrets.MONGODB_URI}} -e SALT=${{secrets.SALT}} -e JWT_SECRET=${{secrets.JWT_SECRET}} build
+          docker compose -f ./docker-compose.yaml --build-arg MONGODB_URI=${{secrets.MONGODB_URI}} --build-arg SALT=${{secrets.SALT}} --build-arg JWT_SECRET=${{secrets.JWT_SECRET}} build
 
       - name: Push Docker images to Amazon ECR
         run: |
